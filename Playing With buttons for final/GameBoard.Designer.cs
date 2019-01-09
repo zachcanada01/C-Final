@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.WinsTx = new System.Windows.Forms.Label();
             this.lbltx = new System.Windows.Forms.Label();
             this.lbltxt = new System.Windows.Forms.Label();
@@ -86,6 +87,8 @@
             this.cE3 = new System.Windows.Forms.Button();
             this.cE4 = new System.Windows.Forms.Button();
             this.cE5 = new System.Windows.Forms.Button();
+            this.enemyPlayTimer = new System.Windows.Forms.Timer(this.components);
+            this.enemyPositionPicker = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // WinsTx
@@ -182,6 +185,7 @@
             this.CoordBox.Size = new System.Drawing.Size(119, 21);
             this.CoordBox.TabIndex = 6;
             this.CoordBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.CoordBox.Click += new System.EventHandler(this.attackEnemyPosition);
             // 
             // ExitBtn
             // 
@@ -200,7 +204,7 @@
             this.A1.Size = new System.Drawing.Size(33, 32);
             this.A1.TabIndex = 8;
             this.A1.UseVisualStyleBackColor = true;
-            this.A1.Click += new System.EventHandler(this.A1_Click);
+            this.A1.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // A2
             // 
@@ -209,6 +213,7 @@
             this.A2.Size = new System.Drawing.Size(33, 32);
             this.A2.TabIndex = 9;
             this.A2.UseVisualStyleBackColor = true;
+            this.A2.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // A3
             // 
@@ -217,6 +222,7 @@
             this.A3.Size = new System.Drawing.Size(33, 32);
             this.A3.TabIndex = 10;
             this.A3.UseVisualStyleBackColor = true;
+            this.A3.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // A4
             // 
@@ -225,6 +231,7 @@
             this.A4.Size = new System.Drawing.Size(33, 32);
             this.A4.TabIndex = 11;
             this.A4.UseVisualStyleBackColor = true;
+            this.A4.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // A5
             // 
@@ -233,6 +240,7 @@
             this.A5.Size = new System.Drawing.Size(33, 32);
             this.A5.TabIndex = 12;
             this.A5.UseVisualStyleBackColor = true;
+            this.A5.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // B1
             // 
@@ -241,6 +249,7 @@
             this.B1.Size = new System.Drawing.Size(33, 32);
             this.B1.TabIndex = 13;
             this.B1.UseVisualStyleBackColor = true;
+            this.B1.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // B2
             // 
@@ -249,6 +258,7 @@
             this.B2.Size = new System.Drawing.Size(33, 32);
             this.B2.TabIndex = 14;
             this.B2.UseVisualStyleBackColor = true;
+            this.B2.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // B3
             // 
@@ -257,6 +267,7 @@
             this.B3.Size = new System.Drawing.Size(33, 32);
             this.B3.TabIndex = 15;
             this.B3.UseVisualStyleBackColor = true;
+            this.B3.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // B4
             // 
@@ -265,6 +276,7 @@
             this.B4.Size = new System.Drawing.Size(33, 32);
             this.B4.TabIndex = 16;
             this.B4.UseVisualStyleBackColor = true;
+            this.B4.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // B5
             // 
@@ -273,6 +285,7 @@
             this.B5.Size = new System.Drawing.Size(33, 32);
             this.B5.TabIndex = 17;
             this.B5.UseVisualStyleBackColor = true;
+            this.B5.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // C1
             // 
@@ -281,6 +294,7 @@
             this.C1.Size = new System.Drawing.Size(33, 32);
             this.C1.TabIndex = 18;
             this.C1.UseVisualStyleBackColor = true;
+            this.C1.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // C2
             // 
@@ -289,6 +303,7 @@
             this.C2.Size = new System.Drawing.Size(33, 32);
             this.C2.TabIndex = 19;
             this.C2.UseVisualStyleBackColor = true;
+            this.C2.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // C3
             // 
@@ -297,6 +312,7 @@
             this.C3.Size = new System.Drawing.Size(33, 32);
             this.C3.TabIndex = 20;
             this.C3.UseVisualStyleBackColor = true;
+            this.C3.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // C4
             // 
@@ -305,6 +321,7 @@
             this.C4.Size = new System.Drawing.Size(33, 32);
             this.C4.TabIndex = 21;
             this.C4.UseVisualStyleBackColor = true;
+            this.C4.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // C5
             // 
@@ -313,6 +330,7 @@
             this.C5.Size = new System.Drawing.Size(33, 32);
             this.C5.TabIndex = 22;
             this.C5.UseVisualStyleBackColor = true;
+            this.C5.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // D1
             // 
@@ -321,6 +339,7 @@
             this.D1.Size = new System.Drawing.Size(33, 32);
             this.D1.TabIndex = 23;
             this.D1.UseVisualStyleBackColor = true;
+            this.D1.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // D2
             // 
@@ -329,6 +348,7 @@
             this.D2.Size = new System.Drawing.Size(33, 32);
             this.D2.TabIndex = 24;
             this.D2.UseVisualStyleBackColor = true;
+            this.D2.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // D3
             // 
@@ -337,6 +357,7 @@
             this.D3.Size = new System.Drawing.Size(33, 32);
             this.D3.TabIndex = 25;
             this.D3.UseVisualStyleBackColor = true;
+            this.D3.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // D4
             // 
@@ -345,6 +366,7 @@
             this.D4.Size = new System.Drawing.Size(33, 32);
             this.D4.TabIndex = 26;
             this.D4.UseVisualStyleBackColor = true;
+            this.D4.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // D5
             // 
@@ -353,6 +375,7 @@
             this.D5.Size = new System.Drawing.Size(33, 32);
             this.D5.TabIndex = 27;
             this.D5.UseVisualStyleBackColor = true;
+            this.D5.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // E1
             // 
@@ -361,6 +384,7 @@
             this.E1.Size = new System.Drawing.Size(33, 32);
             this.E1.TabIndex = 28;
             this.E1.UseVisualStyleBackColor = true;
+            this.E1.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // E2
             // 
@@ -369,6 +393,7 @@
             this.E2.Size = new System.Drawing.Size(33, 32);
             this.E2.TabIndex = 29;
             this.E2.UseVisualStyleBackColor = true;
+            this.E2.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // E3
             // 
@@ -377,6 +402,7 @@
             this.E3.Size = new System.Drawing.Size(33, 32);
             this.E3.TabIndex = 30;
             this.E3.UseVisualStyleBackColor = true;
+            this.E3.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // E4
             // 
@@ -385,6 +411,7 @@
             this.E4.Size = new System.Drawing.Size(33, 32);
             this.E4.TabIndex = 31;
             this.E4.UseVisualStyleBackColor = true;
+            this.E4.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // E5
             // 
@@ -393,6 +420,7 @@
             this.E5.Size = new System.Drawing.Size(33, 32);
             this.E5.TabIndex = 32;
             this.E5.UseVisualStyleBackColor = true;
+            this.E5.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // cA1
             // 
@@ -595,6 +623,17 @@
             this.cE5.TabIndex = 57;
             this.cE5.UseVisualStyleBackColor = true;
             // 
+            // enemyPlayTimer
+            // 
+            this.enemyPlayTimer.Interval = 1000;
+            this.enemyPlayTimer.Tick += new System.EventHandler(this.enemyAttackPlayer);
+            // 
+            // enemyPositionPicker
+            // 
+            this.enemyPositionPicker.Enabled = true;
+            this.enemyPositionPicker.Interval = 500;
+            this.enemyPositionPicker.Tick += new System.EventHandler(this.enemyPicksPosition);
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,5 +765,7 @@
         private System.Windows.Forms.Button cE3;
         private System.Windows.Forms.Button cE4;
         private System.Windows.Forms.Button cE5;
+        private System.Windows.Forms.Timer enemyPlayTimer;
+        private System.Windows.Forms.Timer enemyPositionPicker;
     }
 }
