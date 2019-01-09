@@ -48,9 +48,10 @@
             // InstructionLbl
             // 
             this.InstructionLbl.AutoSize = true;
-            this.InstructionLbl.Location = new System.Drawing.Point(58, 77);
+            this.InstructionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.InstructionLbl.Location = new System.Drawing.Point(31, 83);
             this.InstructionLbl.Name = "InstructionLbl";
-            this.InstructionLbl.Size = new System.Drawing.Size(681, 91);
+            this.InstructionLbl.Size = new System.Drawing.Size(757, 105);
             this.InstructionLbl.TabIndex = 1;
             this.InstructionLbl.Text = resources.GetString("InstructionLbl.Text");
             // 

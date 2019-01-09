@@ -1,4 +1,6 @@
-﻿namespace Playing_With_buttons_for_final
+﻿using System;
+
+namespace Playing_With_buttons_for_final
 {
     partial class MainMenu
     {
@@ -110,6 +112,7 @@
             this.PerformLayout();
 
         }
+
 
         #endregion
 
