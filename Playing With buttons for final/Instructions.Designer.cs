@@ -83,6 +83,7 @@
             this.Controls.Add(this.lblInstruc);
             this.Name = "Instructions";
             this.Text = "Instructions";
+            this.Load += new System.EventHandler(this.Instructions_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

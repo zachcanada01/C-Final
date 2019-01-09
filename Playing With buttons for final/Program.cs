@@ -17,6 +17,8 @@ namespace Playing_With_buttons_for_final
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());
+    
+            
         }
     }
 }
