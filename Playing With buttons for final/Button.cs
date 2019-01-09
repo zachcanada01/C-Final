@@ -31,5 +31,10 @@ namespace Playing_With_buttons_for_final
                 pictureBox5.Visible = true;
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
