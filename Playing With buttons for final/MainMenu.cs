@@ -28,5 +28,6 @@ namespace Playing_With_buttons_for_final
             GameBoard f2 = new GameBoard();
             f2.ShowDialog();
         }
+
     }
 }

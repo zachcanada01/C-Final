@@ -1,4 +1,6 @@
-﻿namespace Playing_With_buttons_for_final
+﻿using System;
+
+namespace Playing_With_buttons_for_final
 {
     partial class MainMenu
     {
@@ -31,7 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.BattleLbl = new System.Windows.Forms.Label();
             this.PlayBtn = new System.Windows.Forms.Button();
-            this.InstructionsBtn = new System.Windows.Forms.Button();
             this.lblUs = new System.Windows.Forms.Label();
             this.ExplosionPic = new System.Windows.Forms.PictureBox();
             this.ExplosionPoc = new System.Windows.Forms.PictureBox();
@@ -59,16 +60,6 @@
             this.PlayBtn.Text = "Play \r\nPlayer VS Computer\r\n";
             this.PlayBtn.UseVisualStyleBackColor = true;
             this.PlayBtn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // InstructionsBtn
-            // 
-            this.InstructionsBtn.Font = new System.Drawing.Font("Niagara Solid", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InstructionsBtn.Location = new System.Drawing.Point(321, 243);
-            this.InstructionsBtn.Name = "InstructionsBtn";
-            this.InstructionsBtn.Size = new System.Drawing.Size(180, 49);
-            this.InstructionsBtn.TabIndex = 4;
-            this.InstructionsBtn.Text = "Instructions";
-            this.InstructionsBtn.UseVisualStyleBackColor = true;
             // 
             // lblUs
             // 
@@ -108,7 +99,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblUs);
-            this.Controls.Add(this.InstructionsBtn);
             this.Controls.Add(this.ExplosionPic);
             this.Controls.Add(this.PlayBtn);
             this.Controls.Add(this.BattleLbl);
@@ -123,13 +113,13 @@
 
         }
 
+
         #endregion
 
         private System.Windows.Forms.PictureBox ExplosionPoc;
         private System.Windows.Forms.Label BattleLbl;
         private System.Windows.Forms.Button PlayBtn;
         private System.Windows.Forms.PictureBox ExplosionPic;
-        private System.Windows.Forms.Button InstructionsBtn;
         private System.Windows.Forms.Label lblUs;
     }
 }
