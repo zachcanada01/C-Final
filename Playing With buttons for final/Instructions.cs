@@ -16,5 +16,10 @@ namespace Playing_With_buttons_for_final
         {
             InitializeComponent();
         }
+
+        private void Instructions_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
