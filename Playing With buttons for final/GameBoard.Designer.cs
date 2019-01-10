@@ -35,7 +35,7 @@
             this.WinsTxt = new System.Windows.Forms.Label();
             this.PlayerLBL = new System.Windows.Forms.Label();
             this.CompLBL = new System.Windows.Forms.Label();
-            this.CoordBox = new System.Windows.Forms.ComboBox();
+            this.enemyCoordinate = new System.Windows.Forms.ComboBox();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.A1 = new System.Windows.Forms.Button();
             this.A2 = new System.Windows.Forms.Button();
@@ -89,6 +89,7 @@
             this.cE5 = new System.Windows.Forms.Button();
             this.enemyPlayTimer = new System.Windows.Forms.Timer(this.components);
             this.enemyPositionPicker = new System.Windows.Forms.Timer(this.components);
+            this.attackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WinsTx
@@ -148,11 +149,12 @@
             this.CompLBL.TabIndex = 5;
             this.CompLBL.Text = "Computer";
             // 
-            // CoordBox
+            // enemyCoordinate
             // 
-            this.CoordBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoordBox.FormattingEnabled = true;
-            this.CoordBox.Items.AddRange(new object[] {
+            this.enemyCoordinate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.enemyCoordinate.DropDownWidth = 95;
+            this.enemyCoordinate.FormattingEnabled = true;
+            this.enemyCoordinate.Items.AddRange(new object[] {
             "A1",
             "A2",
             "A3",
@@ -160,7 +162,7 @@
             "A5",
             "B1",
             "B2",
-            "B3 ",
+            "B3",
             "B4",
             "B5",
             "C1",
@@ -178,14 +180,13 @@
             "E3",
             "E4",
             "E5"});
-            this.CoordBox.Location = new System.Drawing.Point(348, 51);
-            this.CoordBox.MaxDropDownItems = 36;
-            this.CoordBox.MaxLength = 4;
-            this.CoordBox.Name = "CoordBox";
-            this.CoordBox.Size = new System.Drawing.Size(119, 21);
-            this.CoordBox.TabIndex = 6;
-            this.CoordBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.CoordBox.Click += new System.EventHandler(this.attackEnemyPosition);
+            this.enemyCoordinate.Location = new System.Drawing.Point(348, 51);
+            this.enemyCoordinate.MaxDropDownItems = 36;
+            this.enemyCoordinate.MaxLength = 4;
+            this.enemyCoordinate.Name = "enemyCoordinate";
+            this.enemyCoordinate.Size = new System.Drawing.Size(119, 21);
+            this.enemyCoordinate.TabIndex = 6;
+            this.enemyCoordinate.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // ExitBtn
             // 
@@ -634,11 +635,22 @@
             this.enemyPositionPicker.Interval = 500;
             this.enemyPositionPicker.Tick += new System.EventHandler(this.enemyPicksPosition);
             // 
+            // attackButton
+            // 
+            this.attackButton.Location = new System.Drawing.Point(371, 78);
+            this.attackButton.Name = "attackButton";
+            this.attackButton.Size = new System.Drawing.Size(75, 23);
+            this.attackButton.TabIndex = 58;
+            this.attackButton.Text = "Attack";
+            this.attackButton.UseVisualStyleBackColor = true;
+            this.attackButton.Click += new System.EventHandler(this.attackEnemyPosition);
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.attackButton);
             this.Controls.Add(this.cE5);
             this.Controls.Add(this.cE4);
             this.Controls.Add(this.cE3);
@@ -690,7 +702,7 @@
             this.Controls.Add(this.A2);
             this.Controls.Add(this.A1);
             this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.CoordBox);
+            this.Controls.Add(this.enemyCoordinate);
             this.Controls.Add(this.CompLBL);
             this.Controls.Add(this.PlayerLBL);
             this.Controls.Add(this.WinsTxt);
@@ -713,7 +725,7 @@
         private System.Windows.Forms.Label WinsTxt;
         private System.Windows.Forms.Label PlayerLBL;
         private System.Windows.Forms.Label CompLBL;
-        private System.Windows.Forms.ComboBox CoordBox;
+        private System.Windows.Forms.ComboBox enemyCoordinate;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button A1;
         private System.Windows.Forms.Button A2;
@@ -767,5 +779,6 @@
         private System.Windows.Forms.Button cE5;
         private System.Windows.Forms.Timer enemyPlayTimer;
         private System.Windows.Forms.Timer enemyPositionPicker;
+        private System.Windows.Forms.Button attackButton;
     }
 }

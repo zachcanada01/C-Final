@@ -8,18 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Diagnostics; 
+
 namespace Playing_With_buttons_for_final
 {
     public partial class GameBoard : Form
     {
-       
-      
-        
+        List<Button> playerPosition;
+        List<Button> enemyPosition;
+        Random rand = new Random();
+        int totalShips = 5;
+        int totalEnemy = 5;
+        int rounds = 5;
+        int playerTotalScore = 0;
+        int enemyTotalScore = 0;
+
+
 
         public GameBoard()
         {
             InitializeComponent();
-            
+            loadButtons();
+            attackButton.Enabled = false;
+            enemyCoordinate.Text = null;
            
         }
 
@@ -264,19 +275,63 @@ namespace Playing_With_buttons_for_final
         {
             if (true)
             {
-                E5.BackColor = Color.Blue;
+                
                 
             }
         }
 
         private void playerPicksPosition(object sender, EventArgs e)
         {
+            if (totalShips > 0)
+            {
+                var button = (Button)sender;
+                button.Enabled = false;
+                button.Tag = "playerShip";
+                button.BackColor = Color.Blue;
+                totalShips--;
+            }
+            if (totalShips == 0)
+            {
+                attackButton.Enabled = true;
+                attackButton.BackColor = Color.Yellow;
+
+
+            }
 
         }
 
         private void attackEnemyPosition(object sender, EventArgs e)
         {
+            if(enemyCoordinate.Text != "")
+            {
+                var attackPos = enemyCoordinate.Text;
+                attackPos = attack.ToLower();
+                int index = enemyPosition.FindIndex(a => a.Name == attackPos);
 
+                if(enemyPosition[index].Enabled && rounds > 0)
+                {
+                    rounds--;
+                    if (enemyPosition[index].Tag == "enemyShip")
+                    {
+                        enemyPosition[index].Enabled = false;
+                        enemyPosition[index].BackColor = Color.Red;
+                        enemyPosition[index].BackColor = Color.LightBlue;
+                        playerTotalScore++;
+                        enemyPlayTimer.Start();
+                    }
+                    else
+                    {
+                        enemyPosition[index].Enabled = false;
+                        enemyPosition[index].BackColor = Color.Black;
+                        enemyPosition[index].BackColor = Color.LightBlue;
+                        enemyPlayTimer.Start();
+                    }
+                        
+                }
+                
+
+            }
+            
         }
 
         private void enemyAttackPlayer(object sender, EventArgs e)
@@ -286,7 +341,29 @@ namespace Playing_With_buttons_for_final
 
         private void enemyPicksPosition(object sender, EventArgs e)
         {
+            int index = rand.Next(enemyPosition.Count);
 
+            if(enemyPosition[index].Enabled == true && enemyPosition[index].Tag == null)
+            {
+                enemyPosition[index].Tag = "enemyShip";
+                totalEnemy--;
+            }
+            else
+            {
+                index = rand.Next(enemyPosition.Count);
+            }
+        }
+        private void loadButtons()
+        {
+            playerPosition = new List<Button> {A1, A2, A3, A4, A5, B1, B2, B3, B4, B5, C1, C2, C3, C4, C5, D1, D2, D3, D4, D5, E1, E2, E3, E4, E5 };
+            enemyPosition = new List<Button> {A1, A2, A3, A4, A5, B1, B2, B3, B4, B5, C1, C2, C3, C4, C5, D1, D2, D3, D4, D5, E1, E2, E3, E4, E5 };
+
+            for (int i = 0; i < enemyPosition.Count; i++)
+            {
+                enemyPosition[i].Tag = null;
+                enemyCoordinate.Items.Add(enemyPosition[i].Text);
+            }
+            
         }
     }
 }
