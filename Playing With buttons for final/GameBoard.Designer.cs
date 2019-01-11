@@ -90,6 +90,11 @@
             this.enemyPlayTimer = new System.Windows.Forms.Timer(this.components);
             this.enemyPositionPicker = new System.Windows.Forms.Timer(this.components);
             this.attackButton = new System.Windows.Forms.Button();
+            this.enemyMoves = new System.Windows.Forms.Label();
+            this.help = new System.Windows.Forms.Label();
+            this.enemyScore = new System.Windows.Forms.Label();
+            this.playerScore = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // WinsTx
@@ -154,32 +159,6 @@
             this.enemyCoordinate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.enemyCoordinate.DropDownWidth = 95;
             this.enemyCoordinate.FormattingEnabled = true;
-            this.enemyCoordinate.Items.AddRange(new object[] {
-            "A1",
-            "A2",
-            "A3",
-            "A4",
-            "A5",
-            "B1",
-            "B2",
-            "B3",
-            "B4",
-            "B5",
-            "C1",
-            "C2",
-            "C3",
-            "C4",
-            "C5",
-            "D1",
-            "D2",
-            "D3",
-            "D4",
-            "D5",
-            "E1",
-            "E2",
-            "E3",
-            "E4",
-            "E5"});
             this.enemyCoordinate.Location = new System.Drawing.Point(348, 51);
             this.enemyCoordinate.MaxDropDownItems = 36;
             this.enemyCoordinate.MaxLength = 4;
@@ -645,11 +624,56 @@
             this.attackButton.UseVisualStyleBackColor = true;
             this.attackButton.Click += new System.EventHandler(this.attackEnemyPosition);
             // 
+            // enemyMoves
+            // 
+            this.enemyMoves.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.enemyMoves.Location = new System.Drawing.Point(688, 21);
+            this.enemyMoves.Name = "enemyMoves";
+            this.enemyMoves.Size = new System.Drawing.Size(100, 23);
+            this.enemyMoves.TabIndex = 59;
+            // 
+            // help
+            // 
+            this.help.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.help.Location = new System.Drawing.Point(358, 347);
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(100, 23);
+            this.help.TabIndex = 60;
+            // 
+            // enemyScore
+            // 
+            this.enemyScore.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.enemyScore.Location = new System.Drawing.Point(577, 347);
+            this.enemyScore.Name = "enemyScore";
+            this.enemyScore.Size = new System.Drawing.Size(100, 23);
+            this.enemyScore.TabIndex = 61;
+            // 
+            // playerScore
+            // 
+            this.playerScore.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.playerScore.Location = new System.Drawing.Point(121, 347);
+            this.playerScore.Name = "playerScore";
+            this.playerScore.Size = new System.Drawing.Size(100, 23);
+            this.playerScore.TabIndex = 62;
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Location = new System.Drawing.Point(358, 277);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 63;
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.playerScore);
+            this.Controls.Add(this.enemyScore);
+            this.Controls.Add(this.help);
+            this.Controls.Add(this.enemyMoves);
             this.Controls.Add(this.attackButton);
             this.Controls.Add(this.cE5);
             this.Controls.Add(this.cE4);
@@ -780,5 +804,10 @@
         private System.Windows.Forms.Timer enemyPlayTimer;
         private System.Windows.Forms.Timer enemyPositionPicker;
         private System.Windows.Forms.Button attackButton;
+        private System.Windows.Forms.Label enemyMoves;
+        private System.Windows.Forms.Label help;
+        private System.Windows.Forms.Label enemyScore;
+        private System.Windows.Forms.Label playerScore;
+        private System.Windows.Forms.Label label2;
     }
 }
